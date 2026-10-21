@@ -10,13 +10,6 @@ variable "project_name" {
   default     = "three-tier"
 }
 
-# variable "frontend_ami" {
-#   description = "Frontend AMI name pattern"
-#   type        = string
-# }
-
-
-
 variable "instance_type" {
   description = "Instance type for EC2"
   type        = string

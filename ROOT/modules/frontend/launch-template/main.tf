@@ -1,25 +1,12 @@
 
 
-# -----------------------
-# Frontend AMI
-# -----------------------
-# data "aws_ami" "frontend" {
-#   most_recent = true
-#   owners      = ["self"]
-
-#   filter {
-#     name   = "name"
-#     values = [var.frontend_ami]
-#   }
-# }
-
 resource "aws_ami_from_instance" "ami_frontend" {
-  name               = "frontend-ami"
-  source_instance_id = var.instanceid
+  name                    = "frontend-ami"
+  source_instance_id      = var.instanceid
   snapshot_without_reboot = false
 
   tags = {
-    Name = "fronntend-ami"
+    Name = "frontend-ami"
   }
 }
 

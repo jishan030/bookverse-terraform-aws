@@ -29,7 +29,7 @@ vpc_id            = module.vpc.vpc_id
 module "frontend-ec2" {
 source = "../../modules/frontend/ec2"
 aws_region = "us-east-1"
-ami = "ami-00ca32bbc84273381"
+ami = "ami-0567589d25e06853e"
 instance_type = "t2.micro"
 key_name = "us-east-1"
 subnet_id = module.vpc.public_subnets[0]
@@ -43,7 +43,7 @@ security_group_id = module.vpc.bastion_sg_id
 module "backend-ec2" {
 source = "../../modules/backend/ec2"
 aws_region = "us-east-1"
-ami = "ami-00ca32bbc84273381"
+ami = "ami-0567589d25e06853e"
 instance_type = "t2.micro"
 key_name = "us-east-1"
 subnet_id = module.vpc.public_subnets[0]
@@ -56,7 +56,7 @@ security_group_id = module.vpc.bastion_sg_id
 module "bastion" {
 source = "../../modules/bastion"
 aws_region = "us-east-1"
-ami = "ami-00ca32bbc84273381"
+ami = "ami-0567589d25e06853e"
 instance_type = "t2.micro"
 key_name = "us-east-1"
 subnet_id = module.vpc.public_subnets[0]
@@ -107,7 +107,7 @@ instance_class    = "db.t3.micro"
 multi_az          = false
 db_name           = "bookdb"
 db_username       = "admin"
-db_password       = "SuperSecretPass123"
+db_password       = "Jishan123"
 db_subnet_1_id    = module.vpc.private_db_subnets[0]
 db_subnet_2_id    = module.vpc.private_db_subnets[1]
 rds_sg_id         = module.vpc.database_sg_id
@@ -119,22 +119,21 @@ rds_sg_id         = module.vpc.database_sg_id
 # ─────────────────────────────
 # Frontend Launch Template
 # ─────────────────────────────
-module "frontend_launchtemplate" {
+ module "frontend_launchtemplate" {
 
 source        = "../../modules/frontend/launch-template"
 #source = "../../modules/frontend/launch-template"
 aws_region   = "us-east-1"
 project_name   = "three-tier"
-#frontend_ami   = module.frontend_launchtemplate.ami.id
 instance_type  = "t3.micro"
 frontend_sg_id = module.vpc.frontend_server_sg_id
 key_name       = "us-east-1"
 instanceid = module.frontend-ec2.frontend_instanceid
 
 }
-# ─────────────────────────────
+# ──────────────────────────────
 # Backend Launch Template
-# ─────────────────────────────
+# ──────────────────────────────
 module "backend_launchtemplate" {
 
 source        = "../../modules/backend/launch-template"
