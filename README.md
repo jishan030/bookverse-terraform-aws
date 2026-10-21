@@ -220,8 +220,28 @@ This section will showcase the actual BookVerse application.
 
 ### Application Homepage
 
+### BookVerse Homepage
 ![BookVerse Homepage](docs/images/bookverse-homepage.png)
 
+### Books Listing
+![Books Listing](docs/images/bookverse-books.png)
+
+### Add a Book
+![Add a Book](docs/images/bookverse-add-book.png)
+
+## AWS Infrastructure Screenshots
+
+### Backend Target Group
+![Backend Target Group](docs/images/backend-target-group.png)
+
+### Frontend Target Group
+![Frontend Target Group](docs/images/frontend-target-group.png)
+
+### EC2 Instances
+![EC2 Instances](docs/images/ec2-instances.png)
+
+### Custom AMIs
+![Custom AMIs](docs/images/custom-amis.png)
 ### Application Features
 
 <!-- Add more screenshots after uploading them to the repository. -->
