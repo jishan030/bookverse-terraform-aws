@@ -220,7 +220,6 @@ This section will showcase the actual BookVerse application.
 
 ### Application Homepage
 
-### BookVerse Homepage
 ![BookVerse Homepage](docs/images/bookverse-homepage.png)
 
 ### Books Listing
